@@ -81,7 +81,7 @@ public class ClipboardCommands {
         }
         session.setClipboard(clipboard);
 
-        player.print("Block(s) copied.");
+        player.print("Blok(i) skopiowane do schowka.");
     }
 
     @Command(
@@ -133,7 +133,7 @@ public class ClipboardCommands {
         session.setClipboard(clipboard);
 
         editSession.setBlocks(region, block);
-        player.print("Block(s) cut.");
+        player.print("Blok(i) wyciete do schowka.");
     }
 
     @Command(
@@ -162,12 +162,12 @@ public class ClipboardCommands {
             session.getClipboard().place(editSession, pos, pasteNoAir);
             session.getClipboard().pasteEntities(pos);
             player.findFreePosition();
-            player.print("Pasted to copy origin. Undo with //undo");
+            player.print("Wklejono kopie. Cofniecie przez //undo");
         } else {
             Vector pos = session.getPlacementPosition(player);
             session.getClipboard().paste(editSession, pos, pasteNoAir, true);
             player.findFreePosition();
-            player.print("Pasted relative to you. Undo with //undo");
+            player.print("Wklejono. Cofniecie przez //undo");
         }
     }
 
@@ -187,7 +187,7 @@ public class ClipboardCommands {
         if (angle % 90 == 0) {
             CuboidClipboard clipboard = session.getClipboard();
             clipboard.rotate2D(angle);
-            player.print("Clipboard rotated by " + angle + " degrees.");
+            player.print("Schowek skopiowany o " + angle + " stopni.");
         } else {
             player.printError("Angles must be divisible by 90 degrees.");
         }

@@ -1294,7 +1294,7 @@ public class WorldEdit {
             if (pos != null) {
                 player.findFreePosition(pos);
             } else {
-                player.printError("No block in sight (or too far)!");
+                player.printError("Tam nic nie ma (lub jest zbyt daleko)!");
             }
             return true;
         }
@@ -1329,7 +1329,7 @@ public class WorldEdit {
             }
 
             if (!player.passThroughForwardWall(40)) {
-                player.printError("Nothing to pass through!");
+                player.printError("Tam nic nie ma!");
             }
 
             return true;

@@ -417,9 +417,9 @@ public class UtilityCommands {
         }
 
         if (radius < 0) {
-            player.print("Killed " + killed + " mobs.");
+            player.print("Zabito " + killed + " mobów.");
         } else {
-            player.print("Killed " + killed + " mobs in a radius of " + radius + ".");
+            player.print("Zabito " + killed + " mobów w zasiegu " + radius + " bloków.");
         }
     }
 

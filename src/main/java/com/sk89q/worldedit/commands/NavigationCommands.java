@@ -57,7 +57,7 @@ public class NavigationCommands {
     public void unstuck(CommandContext args, LocalSession session, LocalPlayer player,
             EditSession editSession) throws WorldEditException {
 
-        player.print("There you go!");
+        player.print("Tutaj idziesz!");
         player.findFreePosition();
     }
 
@@ -82,7 +82,7 @@ public class NavigationCommands {
             ++ascentLevels;
         }
         if (ascentLevels == 0) {
-            player.printError("No free spot above you found.");
+            player.printError("Nad toba nie ma wolnego miejsca.");
         } else {
             player.print((ascentLevels != 1) ? "Ascended " + Integer.toString(ascentLevels) + " levels." : "Ascended a level.");
         }
@@ -109,7 +109,7 @@ public class NavigationCommands {
             ++descentLevels;
         }
         if (descentLevels == 0) {
-            player.printError("No free spot above you found.");
+            player.printError("Pod toba nie ma wolnego miejsca.");
         } else {
             player.print((descentLevels != 1) ? "Descended " + Integer.toString(descentLevels) + " levels." : "Descended a level.");
         }
@@ -133,7 +133,7 @@ public class NavigationCommands {
 
         final boolean alwaysGlass = getAlwaysGlass(args);
         if (player.ascendToCeiling(clearance, alwaysGlass)) {
-            player.print("Whoosh!");
+            player.print("Whoosh, teleportowano!");
         } else {
             player.printError("No free spot above you found.");
         }
@@ -150,7 +150,7 @@ public class NavigationCommands {
     public void thru(CommandContext args, LocalSession session, LocalPlayer player,
             EditSession editSession) throws WorldEditException {
         if (player.passThroughForwardWall(6)) {
-            player.print("Whoosh!");
+            player.print("Whoosh, teleportowano!");
         } else {
             player.printError("No free spot ahead of you found.");
         }
@@ -170,9 +170,9 @@ public class NavigationCommands {
         WorldVector pos = player.getSolidBlockTrace(300);
         if (pos != null) {
             player.findFreePosition(pos);
-            player.print("Poof!");
+            player.print("Whoosh, teleportowano!");
         } else {
-            player.printError("No block in sight!");
+            player.printError("Tam nic nie ma!");
         }
     }
 
@@ -193,9 +193,9 @@ public class NavigationCommands {
 
         final boolean alwaysGlass = getAlwaysGlass(args);
         if (player.ascendUpwards(distance, alwaysGlass)) {
-            player.print("Whoosh!");
+            player.print("Whoosh, teleportowano!");
         } else {
-            player.printError("You would hit something above you.");
+            player.printError("Cos jest przed toba.");
         }
     }
 
